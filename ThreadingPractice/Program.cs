@@ -18,7 +18,7 @@ namespace ThreadingPractice
             string numberSt;
             int threadInt;
             string threadSt;
-            int hitCount; 
+            int hitCount = 0;  
 
             Console.WriteLine("How many throws do you want to make for each thread?");
             numberSt = Console.ReadLine();
@@ -52,10 +52,15 @@ namespace ThreadingPractice
             //loop 3
             foreach (var FindPiThread in pList)
             {
+
+                //or hitCount += FindPiThread.getHits(); ? not sure
                 hitCount = FindPiThread.getHits();
+                Console.WriteLine(4 * (hitCount) / (numInt));
             }
 
-            //Print out your evaluation of pi! (4 * (number inside)/ (number thrown))
+            //This might return a divide by zero error, it was mad about the variable "not being assigned"
+            Console.WriteLine(4 * hitCount / (numInt*threadInt));
+
             Console.ReadKey();
         }
     }
