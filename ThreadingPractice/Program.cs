@@ -31,7 +31,7 @@ namespace ThreadingPractice
             List<FindPiThread> pList = new List<FindPiThread>();
 
             //loop 1
-            while (threadInt > 0) {
+            while(threadInt > 0) {
                 FindPiThread find = new FindPiThread(numInt);
                 pList.Add(find);
                 Thread pThread = new Thread(new ThreadStart(find.throwDarts));
@@ -43,14 +43,20 @@ namespace ThreadingPractice
 
 
             //loop 2
-            /*Loop over every item in your thread list
-              Call item.Join() on it
-              NOTE: this tells Main() to wait until every thread is done before continuing! */
+            while(threadInt > 0)
+            {
+                //loop over every item in the thread list
+                tList.Join();
+                threadInt--;
+            }
 
             //loop 3
-            /*Loop over every item in your FindPiThread list
-              Use your accessor to collect the number of darts that landed inside!
-             */
+            while(threadInt > 0)
+            {
+                //loop over every item in the FindPiThread list
+                //use the accessor to collect the number of darts that landed inside
+            }
+
             //Print out your evaluation of pi! (4 * (number inside)/ (number thrown))
             Console.ReadKey();
         }
