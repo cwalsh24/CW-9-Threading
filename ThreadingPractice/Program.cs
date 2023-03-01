@@ -18,6 +18,7 @@ namespace ThreadingPractice
             string numberSt;
             int threadInt;
             string threadSt;
+            int hitCount; 
 
             Console.WriteLine("How many throws do you want to make for each thread?");
             numberSt = Console.ReadLine();
@@ -49,10 +50,9 @@ namespace ThreadingPractice
             }
 
             //loop 3
-            while(threadInt > 0)
+            foreach (var FindPiThread in pList)
             {
-                //loop over every item in the FindPiThread list
-                //use the accessor to collect the number of darts that landed inside
+                hitCount = FindPiThread.getHits();
             }
 
             //Print out your evaluation of pi! (4 * (number inside)/ (number thrown))
