@@ -1,4 +1,15 @@
-﻿using System;
+﻿/**
+ * @file FindPiThread.cs
+ * @author Connor Walsh
+ * @date 2023-3-01
+ * @brief implementation for the FindPiThread class
+ * 
+ * This class file contains the implementation for the FindPiThread which estimates the value of pi using the monte 
+ * carlo method. This is accomplished by simulating a 4th of a dart board. We are able to calculate the value of pi using
+ * the loop contained inside of the class. 
+ */
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -7,7 +18,6 @@ using System.Threading.Tasks;
 
 namespace ThreadingPractice
 {
-    //this is the class that you will create to hold thread state.  It will also house your thread function
     public class FindPiThread
     {
         int dartNum;
@@ -30,8 +40,7 @@ namespace ThreadingPractice
         {
             double x;
             double y;
-            //Inside this function, you should have a loop that randomly “throws” every dart it should throw.
-            //After determining the x and y coordinates, increment your counter of how many land inside!
+
             for(int i = 0; i < dartNum; i++)
             {
                 x = randomNum.NextDouble();

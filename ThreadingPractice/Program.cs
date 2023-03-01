@@ -1,4 +1,14 @@
-﻿using System;
+﻿/**
+ * @file Program.cs
+ * @author Connor Walsh
+ * @date 2023-3-01
+ * @brief ThreadingPractice driver
+ * 
+ * This is the driver for the ThreadingPractice program. It contains code for user input and also loops that work alongside
+ * the FindPiThread class to estimate the value of pi via the monte carlo method. 
+ */
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -18,7 +28,6 @@ namespace ThreadingPractice
             string numberSt;
             int threadInt;
             string threadSt;
-            int hitCount = 0;   
 
             Console.WriteLine("How many throws do you want to make for each thread?");
             numberSt = Console.ReadLine();
