@@ -43,11 +43,9 @@ namespace ThreadingPractice
 
 
             //loop 2
-            while(threadInt > 0)
+            foreach(var Thread in tList)
             {
-                //loop over every item in the thread list
-                tList.Join();
-                threadInt--;
+                Thread.Join();
             }
 
             //loop 3
