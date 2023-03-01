@@ -32,7 +32,6 @@ namespace ThreadingPractice
             List<FindPiThread> pList = new List<FindPiThread>();
 
             //loop 1
-
             for(int i = 0; i < threadInt; i++) { 
                 FindPiThread find = new FindPiThread(numInt);
                 pList.Add(find);
@@ -42,7 +41,6 @@ namespace ThreadingPractice
                 Thread.Sleep(16);
             }
 
-
             //loop 2
             foreach(var Thread in tList)
             {
@@ -50,17 +48,14 @@ namespace ThreadingPractice
             }
 
             double counter = 0; 
+
             //loop 3
             foreach (var FindPiThread in pList)
             {
-
                 counter += FindPiThread.getHits();
-                hitCount = FindPiThread.getHits();
-                Console.WriteLine((4 * (double)(hitCount)) / ((double)(numInt)));
             }
 
-            Console.WriteLine(threadInt);
-            Console.WriteLine(4 * counter / (double)(numInt*threadInt));
+            Console.WriteLine("The total average is: " + 4 * counter / (double)(numInt*threadInt));
 
             Console.ReadKey();
         }
