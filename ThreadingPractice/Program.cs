@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Net.NetworkInformation;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -30,17 +31,11 @@ namespace ThreadingPractice
             List<FindPiThread> p = new List<FindPiThread>();
 
             //loop 1
+            //while()
             FindPiThread find = new FindPiThread(numInt);
-            /*Add this object to the appropriate list!
-              Create a new Thread object, and tie it to the appropriate FindPiThread object:
-              new Thread(new ThreadStart(piThread.throwDarts))
-              NOTE: you don’t need () after the name of the function!
-              Add the thread object to the appropriate list!
-              Tell the thread to start!
-              myThread.Start();
-              Tricksy bit: tell Main() to sleep!
-              Thread.Sleep(16)
-              NOTE: this tells Main() to pause for 16 milliseconds - this ensures that your random number generators in each FindPiThread object gets a unique seed!*/
+            p.Add(find);
+            Thread pThread = new Thread (new ThreadStart(find.throwDarts));
+
 
             //loop 2
             /*Loop over every item in your thread list
