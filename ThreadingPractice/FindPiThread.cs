@@ -50,7 +50,6 @@ namespace ThreadingPractice
                 {
                     dartHits++;
                 }
-
             }
         }
     }
