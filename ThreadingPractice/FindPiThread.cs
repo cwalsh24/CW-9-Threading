@@ -14,7 +14,7 @@ namespace ThreadingPractice
         int dartHits;
         Random randomNum;
 
-        FindPiThread(int number)
+        public FindPiThread(int number)
         {
             randomNum = new Random();
             dartNum = number;
