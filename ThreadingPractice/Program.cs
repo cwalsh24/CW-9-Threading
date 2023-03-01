@@ -32,14 +32,14 @@ namespace ThreadingPractice
             List<FindPiThread> pList = new List<FindPiThread>();
 
             //loop 1
-            while(threadInt > 0) {
+
+            for(int i = 0; i < threadInt; i++) { 
                 FindPiThread find = new FindPiThread(numInt);
                 pList.Add(find);
                 Thread pThread = new Thread(new ThreadStart(find.throwDarts));
                 tList.Add(pThread);
                 pThread.Start();
                 Thread.Sleep(16);
-                threadInt--; 
             }
 
 
@@ -59,6 +59,7 @@ namespace ThreadingPractice
                 Console.WriteLine((4 * (double)(hitCount)) / ((double)(numInt)));
             }
 
+            Console.WriteLine(threadInt);
             Console.WriteLine(4 * counter / (double)(numInt*threadInt));
 
             Console.ReadKey();
