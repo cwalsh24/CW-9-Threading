@@ -28,9 +28,15 @@ namespace ThreadingPractice
 
         public void throwDarts()
         {
-            throw new NotImplementedException();
+            double x;
+            double y;
             //Inside this function, you should have a loop that randomly “throws” every dart it should throw.
             //After determining the x and y coordinates, increment your counter of how many land inside!
+            for(int i = 0; i < dartNum; i++)
+            {
+                x = randomNum.NextDouble();
+                y= randomNum.NextDouble();  
+            }
         }
     }
 }
