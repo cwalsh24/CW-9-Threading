@@ -27,14 +27,19 @@ namespace ThreadingPractice
             threadSt = Console.ReadLine();
             threadInt = int.Parse(threadSt);
 
-            List<Thread> t = new List<Thread>(); 
-            List<FindPiThread> p = new List<FindPiThread>();
+            List<Thread> tList = new List<Thread>();
+            List<FindPiThread> pList = new List<FindPiThread>();
 
             //loop 1
-            //while()
-            FindPiThread find = new FindPiThread(numInt);
-            p.Add(find);
-            Thread pThread = new Thread (new ThreadStart(find.throwDarts));
+            while (threadInt > 0) {
+                FindPiThread find = new FindPiThread(numInt);
+                pList.Add(find);
+                Thread pThread = new Thread(new ThreadStart(find.throwDarts));
+                tList.Add(pThread);
+                pThread.Start();
+                Thread.Sleep(16);
+                threadInt--; 
+            }
 
 
             //loop 2
