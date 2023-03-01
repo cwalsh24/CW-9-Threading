@@ -36,15 +36,10 @@ namespace ThreadingPractice
             {
                 x = randomNum.NextDouble();
                 y= randomNum.NextDouble();
-                double value = Math.Sqrt(x * x + y * y);
+                double value = Math.Sqrt((x * x) + (y * y));
                 if (value < 1)
                 {
                     dartHits++;
-                    dartNum--;
-                }
-                else
-                {
-                    dartNum--; 
                 }
 
             }

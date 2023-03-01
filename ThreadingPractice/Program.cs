@@ -49,17 +49,17 @@ namespace ThreadingPractice
                 Thread.Join();
             }
 
+            double counter = 0; 
             //loop 3
             foreach (var FindPiThread in pList)
             {
 
-                hitCount += FindPiThread.getHits();
-                //hitCount = FindPiThread.getHits();
-                Console.WriteLine(4 * (double)(hitCount) / (double)(numInt));
+                counter += FindPiThread.getHits();
+                hitCount = FindPiThread.getHits();
+                Console.WriteLine((4 * (double)(hitCount)) / ((double)(numInt)));
             }
 
-            //This might return a divide by zero error, it was mad about the variable "not being assigned"
-            //Console.WriteLine(4 * (double)hitCount / (double)(numInt*threadInt));
+            Console.WriteLine(4 * counter / (double)(numInt*threadInt));
 
             Console.ReadKey();
         }
